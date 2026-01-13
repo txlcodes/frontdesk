@@ -21,7 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
 
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => setCurrentPage(Page.LANDING)} className={`text-xs font-bold tracking-widest uppercase transition ${currentPage === Page.LANDING ? 'text-white' : 'text-zinc-500 hover:text-white'}`}>Features</button>
-          <button onClick={() => setCurrentPage(Page.DEMO)} className={`text-xs font-bold tracking-widest uppercase transition ${currentPage === Page.DEMO ? 'text-white' : 'text-zinc-500 hover:text-white'}`}>Live Demo</button>
           <button onClick={() => setCurrentPage(Page.DASHBOARD)} className={`text-xs font-bold tracking-widest uppercase transition ${currentPage === Page.DASHBOARD ? 'text-white' : 'text-zinc-500 hover:text-white'}`}>Dashboard</button>
         </div>
 

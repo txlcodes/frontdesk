@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
-import DemoSection from './components/DemoSection';
 import { Page, BusinessConfig } from './types';
 
 const App: React.FC = () => {
@@ -22,8 +21,6 @@ const App: React.FC = () => {
         return <LandingPage setCurrentPage={setCurrentPage} />;
       case Page.DASHBOARD:
         return <Dashboard config={config} setConfig={setConfig} />;
-      case Page.DEMO:
-        return <DemoSection config={config} />;
       default:
         return <LandingPage setCurrentPage={setCurrentPage} />;
     }

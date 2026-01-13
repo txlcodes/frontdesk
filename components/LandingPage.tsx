@@ -34,10 +34,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-slideUp">
             <button 
-              onClick={() => setCurrentPage(Page.DEMO)}
+              onClick={() => setCurrentPage(Page.DASHBOARD)}
               className="w-full sm:w-auto px-10 py-5 bg-white text-black rounded font-black text-sm uppercase tracking-widest hover:invert transition-all duration-300"
             >
-              Test the AI
+              Get Started
             </button>
             <button 
               onClick={() => setCurrentPage(Page.DASHBOARD)}
@@ -58,15 +58,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                 className="w-full h-full object-cover grayscale opacity-20 contrast-125"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div 
-                  className="w-24 h-24 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center cursor-pointer hover:bg-white hover:text-black transition-all duration-500 group" 
-                  onClick={() => setCurrentPage(Page.DEMO)}
-                >
-                  <svg className="w-10 h-10 ml-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                </div>
-                <span className="mt-6 font-black tracking-[0.4em] text-[10px] uppercase text-zinc-300">Start Voice Demo</span>
-              </div>
             </div>
           </div>
         </div>

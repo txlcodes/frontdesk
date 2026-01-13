@@ -19,6 +19,5 @@ export interface BusinessConfig {
 
 export enum Page {
   LANDING = 'landing',
-  DASHBOARD = 'dashboard',
-  DEMO = 'demo'
+  DASHBOARD = 'dashboard'
 }
