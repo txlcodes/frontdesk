@@ -159,32 +159,78 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
       options.onCallEnd?.();
     });
 
-    // Listen for transcript events - Vapi uses 'transcript' event
-    vapi.on('transcript', (data: any) => {
-      console.log('Vapi transcript event:', data);
-      if (data.transcript) {
-        const isUser = data.role === 'user' || data.type === 'user';
-        options.onTranscript?.(data.transcript, isUser);
-      }
-    });
+    // Listen for all events to debug
+    const allEvents = [
+      'call-start', 'call-end', 'message', 'transcript', 'user-transcript', 
+      'assistant-transcript', 'user-speech-start', 'user-speech-end',
+      'assistant-speech-start', 'assistant-speech-end', 'function-call',
+      'status-update', 'error'
+    ];
 
-    // Listen for message events
+    // Set up comprehensive event listeners
     vapi.on('message', (message: any) => {
       console.log('Vapi message event:', message);
       
-      // Handle different message formats
+      // Handle transcript messages - Deepgram transcriber format
       if (message.type === 'transcript' || message.message?.type === 'transcript') {
-        const transcriptData = message.transcript || message.message?.transcript || message.message;
-        const role = message.role || message.message?.role || (message.type === 'user-transcript' ? 'user' : 'assistant');
+        const transcript = message.transcript || message.message?.transcript || message.text || message.content;
+        const role = message.role || message.message?.role || message.sender;
         
-        if (transcriptData) {
-          const isUser = role === 'user';
-          options.onTranscript?.(transcriptData, isUser);
+        if (transcript) {
+          const isUser = role === 'user' || role === 'caller';
+          console.log(`Transcript (${role}):`, transcript);
+          options.onTranscript?.(transcript, isUser);
+        }
+      }
+      
+      // Handle user transcript specifically
+      if (message.type === 'user-transcript' || message.message?.type === 'user-transcript') {
+        const transcript = message.transcript || message.message?.transcript || message.text;
+        if (transcript) {
+          console.log('User transcript:', transcript);
+          options.onTranscript?.(transcript, true);
+        }
+      }
+      
+      // Handle assistant transcript
+      if (message.type === 'assistant-transcript' || message.message?.type === 'assistant-transcript') {
+        const transcript = message.transcript || message.message?.transcript || message.text;
+        if (transcript) {
+          console.log('Assistant transcript:', transcript);
+          options.onTranscript?.(transcript, false);
         }
       }
     });
 
-    // Listen for user speech events
+    // Listen for transcript events directly
+    vapi.on('transcript', (data: any) => {
+      console.log('Vapi transcript event:', data);
+      if (data.transcript || data.text || data.content) {
+        const transcript = data.transcript || data.text || data.content;
+        const isUser = data.role === 'user' || data.role === 'caller' || data.type === 'user';
+        options.onTranscript?.(transcript, isUser);
+      }
+    });
+
+    // Listen for user transcript events
+    vapi.on('user-transcript', (data: any) => {
+      console.log('Vapi user-transcript event:', data);
+      const transcript = data.transcript || data.text || data.content || data;
+      if (transcript) {
+        options.onTranscript?.(transcript, true);
+      }
+    });
+
+    // Listen for assistant transcript events
+    vapi.on('assistant-transcript', (data: any) => {
+      console.log('Vapi assistant-transcript event:', data);
+      const transcript = data.transcript || data.text || data.content || data;
+      if (transcript) {
+        options.onTranscript?.(transcript, false);
+      }
+    });
+
+    // Listen for speech events
     vapi.on('user-speech-start', () => {
       console.log('User started speaking');
     });
@@ -193,7 +239,6 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
       console.log('User stopped speaking');
     });
 
-    // Listen for assistant speech events  
     vapi.on('assistant-speech-start', () => {
       console.log('Assistant started speaking');
     });
@@ -208,10 +253,15 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
     });
 
     // Start the call with the assistant
+    console.log('Starting Vapi call with assistant:', assistantId);
     vapi.start(assistantId);
+
+    // Wait a moment for connection to establish
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     return {
       stop: async () => {
+        console.log('Stopping Vapi call');
         await vapi.stop();
         isActive = false;
       },
