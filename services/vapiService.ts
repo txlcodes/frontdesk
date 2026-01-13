@@ -107,6 +107,15 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
     throw new Error('VAPI_PUBLIC_KEY is not configured. Please set VITE_VAPI_PUBLIC_KEY in your environment variables.');
   }
 
+  // Request microphone permission before starting
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    // Stop the stream immediately - Vapi will request its own
+    stream.getTracks().forEach(track => track.stop());
+  } catch (err: any) {
+    throw new Error('Microphone access denied. Please allow microphone access to use voice features.');
+  }
+
   const vapi = new Vapi(publicApiKey);
 
   // Build system message from config
@@ -139,20 +148,58 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
 
     // Set up event listeners
     vapi.on('call-start', () => {
+      console.log('Vapi call started');
       isActive = true;
       options.onCallStart?.();
     });
 
     vapi.on('call-end', () => {
+      console.log('Vapi call ended');
       isActive = false;
       options.onCallEnd?.();
     });
 
-    vapi.on('message', (message: any) => {
-      if (message.type === 'transcript' && message.transcript) {
-        const isUser = message.role === 'user';
-        options.onTranscript?.(message.transcript, isUser);
+    // Listen for transcript events - Vapi uses 'transcript' event
+    vapi.on('transcript', (data: any) => {
+      console.log('Vapi transcript event:', data);
+      if (data.transcript) {
+        const isUser = data.role === 'user' || data.type === 'user';
+        options.onTranscript?.(data.transcript, isUser);
       }
+    });
+
+    // Listen for message events
+    vapi.on('message', (message: any) => {
+      console.log('Vapi message event:', message);
+      
+      // Handle different message formats
+      if (message.type === 'transcript' || message.message?.type === 'transcript') {
+        const transcriptData = message.transcript || message.message?.transcript || message.message;
+        const role = message.role || message.message?.role || (message.type === 'user-transcript' ? 'user' : 'assistant');
+        
+        if (transcriptData) {
+          const isUser = role === 'user';
+          options.onTranscript?.(transcriptData, isUser);
+        }
+      }
+    });
+
+    // Listen for user speech events
+    vapi.on('user-speech-start', () => {
+      console.log('User started speaking');
+    });
+
+    vapi.on('user-speech-end', () => {
+      console.log('User stopped speaking');
+    });
+
+    // Listen for assistant speech events  
+    vapi.on('assistant-speech-start', () => {
+      console.log('Assistant started speaking');
+    });
+
+    vapi.on('assistant-speech-end', () => {
+      console.log('Assistant stopped speaking');
     });
 
     vapi.on('error', (error: any) => {
