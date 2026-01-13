@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.VITE_VAPI_PUBLIC_KEY': JSON.stringify(env.VITE_VAPI_PUBLIC_KEY),
         'process.env.VITE_VAPI_ASSISTANT_ID': JSON.stringify(env.VITE_VAPI_ASSISTANT_ID),
+        'process.env.VITE_VAPI_DEMO_ASSISTANT_ID': JSON.stringify(env.VITE_VAPI_DEMO_ASSISTANT_ID),
         'process.env.VITE_VAPI_SERVER_KEY': JSON.stringify(env.VITE_VAPI_SERVER_KEY)
       },
       resolve: {

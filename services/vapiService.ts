@@ -7,6 +7,7 @@ export interface VapiCallOptions {
   onCallStart?: () => void;
   onCallEnd?: () => void;
   onError?: (error: any) => void;
+  useDemoAssistant?: boolean; // Use demo assistant ID if available
 }
 
 export interface VapiCallSession {
@@ -119,16 +120,21 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
   let assistantId: string;
 
   try {
-    // Try to get or create assistant ID
+    // Check if we should use demo assistant
+    const demoAssistantId = import.meta.env.VITE_VAPI_DEMO_ASSISTANT_ID;
     const envAssistantId = import.meta.env.VITE_VAPI_ASSISTANT_ID;
     
-    if (envAssistantId) {
+    if (options.useDemoAssistant && demoAssistantId) {
+      // Use demo assistant for demo section
+      assistantId = demoAssistantId;
+    } else if (envAssistantId) {
+      // Use configured assistant ID
       assistantId = envAssistantId;
     } else if (serverApiKey) {
       // Create assistant dynamically
       assistantId = await createAssistant(options.config, serverApiKey);
     } else {
-      throw new Error('VAPI_ASSISTANT_ID or VITE_VAPI_SERVER_KEY must be configured. Please set one of these in your environment variables.');
+      throw new Error('VAPI_ASSISTANT_ID, VITE_VAPI_DEMO_ASSISTANT_ID, or VITE_VAPI_SERVER_KEY must be configured. Please set one of these in your environment variables.');
     }
 
     // Set up event listeners

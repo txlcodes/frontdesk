@@ -39,6 +39,7 @@ const DemoSection: React.FC<DemoSectionProps> = ({ config }) => {
       
       const session = await startVapiCall({
         config: config,
+        useDemoAssistant: true, // Use demo assistant for demo section
         onTranscript: (text, isUser) => {
           setCurrentTranscription(prev => {
             if (prev.isUser !== isUser && prev.text && prev.isUser !== null) {
