@@ -48,19 +48,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Hero Visual */}
-        <div className="max-w-5xl mx-auto mt-24 relative animate-fadeIn">
-          <div className="glass-effect p-2 rounded-xl border border-white/10 shadow-[0_0_100px_rgba(255,255,255,0.05)]">
-            <div className="relative aspect-video rounded-lg overflow-hidden bg-zinc-900">
-               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200&h=675" 
-                alt="Modern Workspace" 
-                className="w-full h-full object-cover grayscale opacity-20 contrast-125"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Appointment Focus Section */}
