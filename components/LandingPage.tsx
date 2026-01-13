@@ -139,6 +139,183 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-32 px-6 border-t border-white/5 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <span className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.4em]">Pricing</span>
+            <h2 className="text-5xl font-black tracking-tighter mt-4 mb-6 uppercase">Simple, Transparent Pricing</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto font-medium">
+              Choose the plan that fits your practice. All plans include 24/7 AI receptionist service.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Starter Plan */}
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+                  🦷 Starter
+                </div>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-black">$349</span>
+                  <span className="text-zinc-500 text-sm font-bold">/month</span>
+                </div>
+                <div className="text-[10px] text-zinc-600 font-black uppercase tracking-widest line-through mb-1">
+                  Was $299
+                </div>
+                <p className="text-zinc-500 text-xs font-medium mt-4 leading-relaxed">
+                  Still feels "entry-level"
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Filters low-quality clinics</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Increases seriousness</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Improves your margins immediately</span>
+                </li>
+              </ul>
+              
+              <div className="pt-6 border-t border-white/5">
+                <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest mb-4">
+                  👉 This becomes your trial but paid plan.
+                </p>
+                <button 
+                  onClick={() => setCurrentPage(Page.DASHBOARD)}
+                  className="w-full px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded font-black text-xs uppercase tracking-widest transition-all"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Growth Plan - Most Popular */}
+            <div className="bg-white text-black border-2 border-white rounded-2xl p-8 relative hover:scale-105 transition-transform">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="px-4 py-1 bg-white text-black rounded-full text-[9px] font-black uppercase tracking-widest border-2 border-black">
+                  ⭐ Most Popular
+                </span>
+              </div>
+              
+              <div className="mb-6 mt-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 text-[9px] font-black uppercase tracking-widest mb-4">
+                  🦷 Growth
+                </div>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-black">$449</span>
+                  <span className="text-zinc-600 text-sm font-bold">/month</span>
+                </div>
+                <div className="text-[10px] text-zinc-500 font-black uppercase tracking-widest line-through mb-1">
+                  Was $399
+                </div>
+                <p className="text-zinc-600 text-xs font-medium mt-4 leading-relaxed">
+                  This should be your main revenue driver.
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3 text-sm text-zinc-800">
+                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Psychologically still under $500</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-800">
+                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Feels premium but reasonable</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-800">
+                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Dentists rarely negotiate at this level</span>
+                </li>
+              </ul>
+              
+              <div className="pt-6 border-t border-black/10">
+                <p className="text-[10px] text-zinc-600 font-black uppercase tracking-widest mb-4">
+                  👉 Target plan for 70% of clients
+                </p>
+                <button 
+                  onClick={() => setCurrentPage(Page.DASHBOARD)}
+                  className="w-full px-6 py-4 bg-black text-white hover:bg-zinc-900 rounded font-black text-xs uppercase tracking-widest transition-all"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Pro / HIPAA Plan */}
+            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+                  🦷 Pro / HIPAA
+                </div>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-black">Starting at</span>
+                </div>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-black">$749</span>
+                  <span className="text-zinc-500 text-sm font-bold">/month</span>
+                </div>
+                <p className="text-zinc-500 text-xs font-medium mt-4 leading-relaxed">
+                  Enterprise-grade solution for larger practices
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>HIPAA compliant infrastructure</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Custom configuration & support</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Price based on clinic size</span>
+                </li>
+              </ul>
+              
+              <div className="pt-6 border-t border-white/5">
+                <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest mb-4">
+                  Custom pricing available
+                </p>
+                <button 
+                  onClick={() => setCurrentPage(Page.DASHBOARD)}
+                  className="w-full px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded font-black text-xs uppercase tracking-widest transition-all"
+                >
+                  Contact Sales
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-40 px-6">
         <div className="max-w-5xl mx-auto border border-white/10 rounded-[40px] p-20 text-center relative overflow-hidden bg-zinc-950">
