@@ -13,12 +13,15 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
     <div className="pt-32 px-6 pb-20 max-w-7xl mx-auto animate-fadeIn">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
-          <h1 className="text-4xl font-black uppercase tracking-tighter">Command</h1>
-          <p className="text-zinc-500 font-bold text-xs uppercase tracking-[0.3em] mt-2">Environment Control Panel</p>
+          <h1 className="text-4xl font-black uppercase tracking-tighter">Configure Your AI Receptionist</h1>
+          <p className="text-zinc-400 font-medium text-sm mt-3 max-w-2xl">
+            Set up your AI voice assistant to answer calls, book appointments, and handle customer inquiries 24/7. 
+            Customize how it sounds, what it says, and how it represents your business.
+          </p>
         </div>
         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded">
           <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300">Operations: Stable</span>
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300">System Active</span>
         </div>
       </div>
 
@@ -26,24 +29,24 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
         {/* Settings Column */}
         <div className="lg:col-span-4 space-y-8">
           <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl">
-            <h2 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500 mb-10 flex items-center gap-3">
-              Core Parameters
-            </h2>
+            <h2 className="text-sm font-black uppercase tracking-tight mb-2">Business Settings</h2>
+            <p className="text-xs text-zinc-500 mb-8">Tell us about your business so we can customize your AI receptionist</p>
             
             <div className="space-y-8">
               <div>
-                <label className="block text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Identity</label>
+                <label className="block text-xs font-bold text-zinc-400 mb-3">Business Name</label>
                 <input 
                   type="text" 
                   value={config.name}
                   onChange={(e) => setConfig({...config, name: e.target.value})}
                   className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold placeholder-zinc-800"
-                  placeholder="Business Name"
+                  placeholder="e.g., Modern Dentistry"
                 />
+                <p className="text-[10px] text-zinc-600 mt-2">This is how your AI will introduce your business</p>
               </div>
 
               <div>
-                <label className="block text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Industry Vertical</label>
+                <label className="block text-xs font-bold text-zinc-400 mb-3">Industry</label>
                 <select 
                   value={config.industry}
                   onChange={(e) => setConfig({...config, industry: e.target.value})}
@@ -61,23 +64,24 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
 
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Profile</label>
+                  <label className="block text-xs font-bold text-zinc-400 mb-3">Communication Style</label>
                   <select 
                     value={config.tone}
                     onChange={(e) => setConfig({...config, tone: e.target.value as any})}
-                    className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold appearance-none uppercase tracking-tighter"
+                    className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold appearance-none"
                   >
                     <option value="professional">Professional</option>
                     <option value="friendly">Friendly</option>
                     <option value="enthusiastic">Enthusiastic</option>
                   </select>
+                  <p className="text-[10px] text-zinc-600 mt-2">How formal should your AI sound?</p>
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Voice</label>
+                  <label className="block text-xs font-bold text-zinc-400 mb-3">Voice Type</label>
                   <select 
                     value={config.voice}
                     onChange={(e) => setConfig({...config, voice: e.target.value as any})}
-                    className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold appearance-none uppercase tracking-tighter"
+                    className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold appearance-none"
                   >
                     <option value="Kore">Neutral</option>
                     <option value="Zephyr">Soft</option>
@@ -85,45 +89,48 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
                     <option value="Charon">Deep</option>
                     <option value="Fenrir">Assertive</option>
                   </select>
+                  <p className="text-[10px] text-zinc-600 mt-2">Choose a voice that matches your brand</p>
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Scheduling & Knowledge</label>
+                <label className="block text-xs font-bold text-zinc-400 mb-3">AI Instructions</label>
                 <textarea 
-                  rows={5}
+                  rows={6}
                   value={config.instructions}
                   onChange={(e) => setConfig({...config, instructions: e.target.value})}
                   className="w-full bg-black border border-white/5 rounded-lg p-4 focus:outline-none focus:border-white/30 transition-all text-xs font-medium leading-relaxed text-zinc-400"
-                  placeholder="Define how to handle intake and appointments..."
+                  placeholder="Tell your AI how to handle calls. For example: 'Help patients book dental appointments, answer questions about services and pricing, and offer to take messages if you don't know an answer.'"
                 />
+                <p className="text-[10px] text-zinc-600 mt-2">Describe how your AI should handle calls, what information to collect, and how to respond to common questions</p>
               </div>
 
-              <button className="w-full py-5 bg-white text-black rounded font-black text-[11px] uppercase tracking-[0.3em] hover:invert transition-all duration-500">
-                Commit System Update
+              <button className="w-full py-5 bg-white text-black rounded font-black text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300">
+                Save Configuration
               </button>
             </div>
           </div>
 
-          {/* Efficiency Metric */}
+          {/* Stats Card */}
           <div className="p-10 bg-white text-black rounded-2xl shadow-2xl">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-zinc-500">System Performance</h3>
+            <h3 className="text-sm font-black uppercase tracking-tight mb-8">Your Results</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-end mb-2">
-                  <span className="text-[10px] font-black uppercase tracking-widest">Call Capture Rate</span>
+                  <span className="text-xs font-bold">Calls Answered</span>
                   <span className="text-xl font-black">100%</span>
                 </div>
                 <div className="w-full h-1 bg-black/10 rounded-full overflow-hidden">
                    <div className="w-[100%] h-full bg-black"></div>
                 </div>
+                <p className="text-[10px] text-zinc-600 mt-2">Never miss a call again</p>
               </div>
               <div>
                 <div className="flex justify-between items-end mb-2">
-                  <span className="text-[10px] font-black uppercase tracking-widest">Auto-Booked</span>
+                  <span className="text-xs font-bold">Appointments Booked</span>
                   <span className="text-xl font-black">42</span>
                 </div>
-                <div className="text-[9px] font-bold uppercase tracking-widest text-zinc-500">Appointments scheduled this month</div>
+                <p className="text-[10px] text-zinc-600">Automatically scheduled this month</p>
               </div>
             </div>
           </div>
@@ -133,7 +140,10 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
         <div className="lg:col-span-8 space-y-8">
           <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl h-full">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
-              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500">Intake Telemetry</h2>
+              <div>
+                <h2 className="text-sm font-black uppercase tracking-tight mb-2">Call History</h2>
+                <p className="text-xs text-zinc-500">See all calls handled by your AI receptionist</p>
+              </div>
               <div className="flex gap-4">
                 {['Live Feed', 'Appointments', 'History'].map(tab => (
                   <button key={tab} className={`text-[10px] font-black uppercase tracking-widest transition ${tab === 'Live Feed' ? 'text-white' : 'text-zinc-700 hover:text-zinc-500'}`}>
