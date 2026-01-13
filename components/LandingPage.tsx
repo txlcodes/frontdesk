@@ -155,17 +155,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
-                  🦷 Starter
+                  Starter
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-5xl font-black">$349</span>
                   <span className="text-zinc-500 text-sm font-bold">/month</span>
                 </div>
-                <div className="text-[10px] text-zinc-600 font-black uppercase tracking-widest line-through mb-1">
-                  Was $299
-                </div>
-                <p className="text-zinc-500 text-xs font-medium mt-4 leading-relaxed">
-                  Still feels "entry-level"
+                <p className="text-zinc-500 text-sm font-medium mt-4 leading-relaxed">
+                  Perfect for small practices getting started
                 </p>
               </div>
               
@@ -174,26 +171,35 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Filters low-quality clinics</span>
+                  <span>24/7 AI voice receptionist</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-300">
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Increases seriousness</span>
+                  <span>Unlimited calls & conversations</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-300">
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Improves your margins immediately</span>
+                  <span>Calendar integration</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Call transcripts & analytics</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Email support</span>
                 </li>
               </ul>
               
               <div className="pt-6 border-t border-white/5">
-                <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest mb-4">
-                  👉 This becomes your trial but paid plan.
-                </p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
                   className="w-full px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded font-black text-xs uppercase tracking-widest transition-all"
@@ -213,17 +219,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
               
               <div className="mb-6 mt-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 text-[9px] font-black uppercase tracking-widest mb-4">
-                  🦷 Growth
+                  Growth
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-5xl font-black">$449</span>
                   <span className="text-zinc-600 text-sm font-bold">/month</span>
                 </div>
-                <div className="text-[10px] text-zinc-500 font-black uppercase tracking-widest line-through mb-1">
-                  Was $399
-                </div>
-                <p className="text-zinc-600 text-xs font-medium mt-4 leading-relaxed">
-                  This should be your main revenue driver.
+                <p className="text-zinc-600 text-sm font-medium mt-4 leading-relaxed">
+                  Ideal for growing practices with higher call volume
                 </p>
               </div>
               
@@ -232,26 +235,35 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                   <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Psychologically still under $500</span>
+                  <span>Everything in Starter</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-800">
                   <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Feels premium but reasonable</span>
+                  <span>Advanced call routing & queuing</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-800">
                   <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Dentists rarely negotiate at this level</span>
+                  <span>CRM integrations</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-800">
+                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Custom voice & personality</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-800">
+                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Priority support</span>
                 </li>
               </ul>
               
               <div className="pt-6 border-t border-black/10">
-                <p className="text-[10px] text-zinc-600 font-black uppercase tracking-widest mb-4">
-                  👉 Target plan for 70% of clients
-                </p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
                   className="w-full px-6 py-4 bg-black text-white hover:bg-zinc-900 rounded font-black text-xs uppercase tracking-widest transition-all"
@@ -265,17 +277,17 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
-                  🦷 Pro / HIPAA
+                  Pro / HIPAA
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-5xl font-black">Starting at</span>
+                  <span className="text-4xl font-black">Starting at</span>
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-5xl font-black">$749</span>
                   <span className="text-zinc-500 text-sm font-bold">/month</span>
                 </div>
-                <p className="text-zinc-500 text-xs font-medium mt-4 leading-relaxed">
-                  Enterprise-grade solution for larger practices
+                <p className="text-zinc-500 text-sm font-medium mt-4 leading-relaxed">
+                  Enterprise solution for multi-location practices
                 </p>
               </div>
               
@@ -284,25 +296,43 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>HIPAA compliant infrastructure</span>
+                  <span>Everything in Growth</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-300">
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Custom configuration & support</span>
+                  <span>Full HIPAA compliance & BAA</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-zinc-300">
                   <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Price based on clinic size</span>
+                  <span>Multi-location management</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Dedicated account manager</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Custom integrations & workflows</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-zinc-300">
+                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>24/7 phone & email support</span>
                 </li>
               </ul>
               
               <div className="pt-6 border-t border-white/5">
                 <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest mb-4">
-                  Custom pricing available
+                  Custom pricing based on practice size
                 </p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
