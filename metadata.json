@@ -1,0 +1,7 @@
+{
+  "name": "FrontDesk AI",
+  "description": "Revolutionary AI voice receptionist for modern businesses. Provide 24/7 customer support, schedule appointments, and handle inquiries with natural, human-like voice AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
