@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { startLiveSession } from '../services/geminiService';
+import { startVapiCall } from '../services/vapiService';
 import { BusinessConfig } from '../types';
 
 interface DemoSectionProps {
@@ -37,41 +37,52 @@ const DemoSection: React.FC<DemoSectionProps> = ({ config }) => {
       setError(null);
       setCurrentTranscription({ text: "Initializing Secure Connection...", isUser: false });
       
-      const session = await startLiveSession({
-        systemInstruction: config.instructions + `\nAlways respond in a ${config.tone} tone. Your business name is ${config.name}.`,
-        voiceName: config.voice,
-        onTranscription: (text, isUser) => {
+      const session = await startVapiCall({
+        config: config,
+        onTranscript: (text, isUser) => {
           setCurrentTranscription(prev => {
             if (prev.isUser !== isUser && prev.text && prev.isUser !== null) {
               setHistory(h => [...h, { text: prev.text, isUser: prev.isUser! }]);
               return { text: text, isUser };
             }
-            return { text: prev.text + text, isUser };
+            return { text: prev.text + (prev.text ? ' ' : '') + text, isUser };
           });
         },
-        onTurnComplete: () => {
-          setCurrentTranscription(prev => {
-            if (prev.text) {
-              setHistory(h => [...h, { text: prev.text, isUser: prev.isUser! }]);
-            }
-            return { text: '', isUser: null };
-          });
+        onCallStart: () => {
+          setIsActive(true);
+          setCurrentTranscription({ text: '', isUser: null });
+        },
+        onCallEnd: () => {
+          setIsActive(false);
+          if (currentTranscription.text) {
+            setHistory(prev => [...prev, { text: currentTranscription.text, isUser: currentTranscription.isUser! }]);
+            setCurrentTranscription({ text: '', isUser: null });
+          }
         },
         onError: (err) => {
           console.error(err);
-          setError("AUTHENTICATION_FAILED: Check microphone and API key.");
-          setIsActive(false);
-        },
-        onClose: () => {
+          const errorMessage = err?.message || String(err);
+          if (errorMessage.includes('VAPI') || errorMessage.includes('API')) {
+            setError("AUTHENTICATION_FAILED: Check Vapi API key configuration.");
+          } else if (errorMessage.includes('microphone') || errorMessage.includes('Microphone')) {
+            setError("HARDWARE_ERROR: Microphone access required.");
+          } else {
+            setError(`SYSTEM_ERROR: ${errorMessage}`);
+          }
           setIsActive(false);
         }
       });
       sessionRef.current = session;
-      setIsActive(true);
-      setCurrentTranscription({ text: '', isUser: null });
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError("HARDWARE_ERROR: Microphone access required.");
+      const errorMessage = err?.message || String(err);
+      if (errorMessage.includes('VAPI') || errorMessage.includes('API')) {
+        setError("CONFIGURATION_ERROR: Vapi API key or Assistant ID not configured.");
+      } else if (errorMessage.includes('microphone') || errorMessage.includes('Microphone')) {
+        setError("HARDWARE_ERROR: Microphone access required.");
+      } else {
+        setError(`INITIALIZATION_ERROR: ${errorMessage}`);
+      }
     }
   };
 
@@ -175,7 +186,7 @@ const DemoSection: React.FC<DemoSectionProps> = ({ config }) => {
 
         {/* Console Status */}
         <div className="px-10 py-5 bg-black border-t border-white/5 flex items-center justify-between font-mono text-[9px] text-zinc-600 uppercase tracking-[0.4em]">
-          <span>Gemini_2.5_Flash_v1.03</span>
+          <span>Vapi_AI_v1.0</span>
           <div className="flex gap-8">
             <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-white"></span> Low_Latency_Audio</span>
             <span className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-white"></span> Secure_Stream</span>
