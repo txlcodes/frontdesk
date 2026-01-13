@@ -145,8 +145,19 @@ const DemoSection: React.FC<DemoSectionProps> = ({ config }) => {
         {/* Transcript Area */}
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-10 space-y-8 bg-black/40 scroll-smooth">
           {error && (
-            <div className="p-6 bg-white/5 border border-white/10 text-white font-mono text-[10px] uppercase tracking-widest rounded text-center">
-              SYSTEM_FAULT: {error}
+            <div className="p-6 bg-white/5 border border-white/10 text-white font-mono text-[10px] uppercase tracking-widest rounded">
+              <div className="mb-3">SYSTEM_FAULT: {error}</div>
+              {error.includes('MICROPHONE') && (
+                <div className="text-[9px] normal-case tracking-normal text-zinc-400 mt-3 pt-3 border-t border-white/5">
+                  <p className="mb-2">To fix this:</p>
+                  <ol className="list-decimal list-inside space-y-1 text-left">
+                    <li>Click the microphone icon in your browser's address bar</li>
+                    <li>Select "Allow" for microphone access</li>
+                    <li>Refresh the page and try again</li>
+                    <li>Or go to browser Settings → Privacy → Site Settings → Microphone and allow this site</li>
+                  </ol>
+                </div>
+              )}
             </div>
           )}
           

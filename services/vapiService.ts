@@ -108,12 +108,9 @@ export async function startVapiCall(options: VapiCallOptions): Promise<VapiCallS
   }
 
   // Request microphone permission before starting
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    // Stop the stream immediately - Vapi will request its own
-    stream.getTracks().forEach(track => track.stop());
-  } catch (err: any) {
-    throw new Error('Microphone access denied. Please allow microphone access to use voice features.');
+  // Note: Vapi SDK will handle microphone access, but we check availability first
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    throw new Error('Microphone access is not available in this browser. Please use a modern browser like Chrome, Firefox, or Safari.');
   }
 
   const vapi = new Vapi(publicApiKey);
