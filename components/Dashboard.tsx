@@ -12,15 +12,15 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
   return (
     <div className="pt-32 px-6 pb-20 max-w-7xl mx-auto animate-fadeIn">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-        <div>
-          <h1 className="text-4xl font-black uppercase tracking-tighter">Configure Your AI Receptionist</h1>
-          <p className="text-zinc-400 font-medium text-sm mt-3 max-w-2xl">
+        <div className="animate-slideLeft">
+          <h1 className="text-4xl font-black uppercase tracking-tighter animate-slideUp">Configure Your AI Receptionist</h1>
+          <p className="text-zinc-400 font-medium text-sm mt-3 max-w-2xl animate-slideUp" style={{ animationDelay: '0.1s' }}>
             Set up your AI voice assistant to answer calls, book appointments, and handle customer inquiries 24/7. 
             Customize how it sounds, what it says, and how it represents your business.
           </p>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded">
-          <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
+        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded animate-slideRight hover-glow hover-scale">
+          <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse animate-glow"></div>
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300">System Active</span>
         </div>
       </div>
@@ -28,18 +28,18 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* Settings Column */}
         <div className="lg:col-span-4 space-y-8">
-          <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl">
-            <h2 className="text-sm font-black uppercase tracking-tight mb-2">Business Settings</h2>
-            <p className="text-xs text-zinc-500 mb-8">Tell us about your business so we can customize your AI receptionist</p>
+          <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl hover-lift hover-glow animate-scaleIn">
+            <h2 className="text-sm font-black uppercase tracking-tight mb-2 animate-slideDown">Business Settings</h2>
+            <p className="text-xs text-zinc-500 mb-8 animate-fadeIn" style={{ animationDelay: '0.1s' }}>Tell us about your business so we can customize your AI receptionist</p>
             
             <div className="space-y-8">
-              <div>
+              <div className="animate-slideUp" style={{ animationDelay: '0.2s' }}>
                 <label className="block text-xs font-bold text-zinc-400 mb-3">Business Name</label>
                 <input 
                   type="text" 
                   value={config.name}
                   onChange={(e) => setConfig({...config, name: e.target.value})}
-                  className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold placeholder-zinc-800"
+                  className="w-full bg-black border-b border-white/10 px-0 py-3 focus:outline-none focus:border-white transition-all text-sm font-bold placeholder-zinc-800 hover-glow"
                   placeholder="e.g., Modern Dentistry"
                 />
                 <p className="text-[10px] text-zinc-600 mt-2">This is how your AI will introduce your business</p>
@@ -105,15 +105,15 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
                 <p className="text-[10px] text-zinc-600 mt-2">Describe how your AI should handle calls, what information to collect, and how to respond to common questions</p>
               </div>
 
-              <button className="w-full py-5 bg-white text-black rounded font-black text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300">
+              <button className="w-full py-5 bg-white text-black rounded font-black text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 hover-scale hover-glow animate-bounce-slow">
                 Save Configuration
               </button>
             </div>
           </div>
 
           {/* Stats Card */}
-          <div className="p-10 bg-white text-black rounded-2xl shadow-2xl">
-            <h3 className="text-sm font-black uppercase tracking-tight mb-8">Your Results</h3>
+          <div className="p-10 bg-white text-black rounded-2xl shadow-2xl hover-lift hover-glow animate-scaleIn" style={{ animationDelay: '0.3s' }}>
+            <h3 className="text-sm font-black uppercase tracking-tight mb-8 animate-slideDown">Your Results</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-end mb-2">
@@ -138,9 +138,9 @@ const Dashboard: React.FC<DashboardProps> = ({ config, setConfig }) => {
 
         {/* Logs Column */}
         <div className="lg:col-span-8 space-y-8">
-          <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl h-full">
+          <div className="p-10 bg-zinc-950 border border-white/10 rounded-2xl h-full hover-lift hover-glow animate-scaleIn" style={{ animationDelay: '0.4s' }}>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
-              <div>
+              <div className="animate-slideLeft">
                 <h2 className="text-sm font-black uppercase tracking-tight mb-2">Call History</h2>
                 <p className="text-xs text-zinc-500">See all calls handled by your AI receptionist</p>
               </div>

@@ -12,36 +12,37 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
   return (
     <div className="overflow-hidden bg-black text-white">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 px-6">
+      <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px]"></div>
-          <div className="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-zinc-500/5 rounded-full blur-[150px]"></div>
+          <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px] animate-float"></div>
+          <div className="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-zinc-500/5 rounded-full blur-[150px] animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/3 rounded-full blur-[100px] animate-pulse-slow"></div>
         </div>
 
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-8 animate-fadeIn">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-[10px] font-black uppercase tracking-[0.2em] mb-8 animate-fadeIn hover-glow hover-scale">
             Universal Voice AI for Every Industry
           </div>
           
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 animate-slideUp leading-[0.9]">
             NEVER MISS<br />
-            <span className="gradient-text">ANOTHER CALL.</span>
+            <span className="gradient-animated">ANOTHER CALL.</span>
           </h1>
           
-          <p className="text-zinc-400 max-w-2xl mx-auto mb-12 text-lg font-medium animate-slideUp leading-relaxed">
+          <p className="text-zinc-400 max-w-2xl mx-auto mb-12 text-lg font-medium animate-slideUp leading-relaxed" style={{ animationDelay: '0.2s' }}>
             FrontDesk is the intelligent voice receptionist for Law, HVAC, Real Estate, and beyond. We handle your leads, answer FAQs, and book appointments 24/7 without a second of downtime.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-slideUp">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-slideUp" style={{ animationDelay: '0.4s' }}>
             <button 
               onClick={() => setCurrentPage(Page.DASHBOARD)}
-              className="w-full sm:w-auto px-10 py-5 bg-white text-black rounded font-black text-sm uppercase tracking-widest hover:invert transition-all duration-300"
+              className="w-full sm:w-auto px-10 py-5 bg-white text-black rounded font-black text-sm uppercase tracking-widest hover-lift hover-glow transition-all duration-300 animate-bounce-slow"
             >
               Get Started
             </button>
             <button 
               onClick={() => setCurrentPage(Page.DASHBOARD)}
-              className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:bg-white/10 rounded font-black text-sm uppercase tracking-widest transition-all"
+              className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:bg-white/10 rounded font-black text-sm uppercase tracking-widest hover-lift transition-all"
             >
               Configure Yours
             </button>
@@ -51,27 +52,28 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
       </section>
 
       {/* Appointment Focus Section */}
-      <section className="py-24 px-6 bg-zinc-950/50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div>
-            <span className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.4em]">Seamless Integration</span>
-            <h2 className="text-4xl font-black tracking-tight mt-4 mb-6 uppercase leading-tight">Autonomous<br />Scheduling.</h2>
-            <p className="text-zinc-400 font-medium mb-8 leading-relaxed">
+      <section className="py-24 px-6 bg-zinc-950/50 relative overflow-hidden">
+        <div className="absolute inset-0 shimmer-effect opacity-20"></div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center relative z-10">
+          <div className="animate-slideLeft">
+            <span className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.4em] inline-block animate-fadeIn">Seamless Integration</span>
+            <h2 className="text-4xl font-black tracking-tight mt-4 mb-6 uppercase leading-tight animate-slideUp" style={{ animationDelay: '0.1s' }}>Autonomous<br />Scheduling.</h2>
+            <p className="text-zinc-400 font-medium mb-8 leading-relaxed animate-slideUp" style={{ animationDelay: '0.2s' }}>
               No more back-and-forth. FrontDesk AI syncs directly with your calendar. When a customer calls, it finds an open slot, confirms their details, and adds it to your schedule automatically.
             </p>
             <ul className="space-y-4">
               {['Syncs with Google & Outlook', 'Handles cancellations & rescheduling', 'Instant SMS confirmations'].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                <li key={i} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest animate-slideLeft hover-scale" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
+                  <svg className="w-5 h-5 text-white animate-bounce-slow" style={{ animationDelay: `${i * 0.2}s` }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="p-10 border border-white/10 rounded-3xl bg-black shadow-2xl">
+          <div className="p-10 border border-white/10 rounded-3xl bg-black shadow-2xl hover-lift hover-glow animate-slideRight animate-scaleIn">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500">Upcoming Appointments</h3>
-              <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-white animate-pulse animate-glow"></div>
             </div>
             <div className="space-y-4">
               {[
@@ -79,12 +81,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                 { name: 'Elena Rodriguez', time: 'Tomorrow at 9:30 AM', type: 'Intake' },
                 { name: 'James Wilson', time: 'Wed at 4:15 PM', type: 'Meeting' }
               ].map((apt, i) => (
-                <div key={i} className="p-4 bg-zinc-900 border border-white/5 rounded-xl flex items-center justify-between">
+                <div key={i} className="p-4 bg-zinc-900 border border-white/5 rounded-xl flex items-center justify-between hover-lift hover-scale transition-all animate-slideUp" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
                   <div>
                     <div className="text-sm font-bold">{apt.name}</div>
                     <div className="text-[10px] text-zinc-500 font-mono mt-1">{apt.time}</div>
                   </div>
-                  <div className="text-[10px] font-black uppercase tracking-widest bg-white/5 px-2 py-1 rounded">{apt.type}</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest bg-white/5 px-2 py-1 rounded hover-glow">{apt.type}</div>
                 </div>
               ))}
             </div>
@@ -105,12 +107,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
             {FEATURES.map((feature, idx) => (
-              <div key={idx} className="p-12 bg-black hover:bg-zinc-950 transition-colors group">
-                <div className="w-12 h-12 rounded-lg bg-white text-black flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+              <div key={idx} className="p-12 bg-black hover:bg-zinc-950 transition-all duration-500 group hover-lift hover-glow animate-scaleIn" style={{ animationDelay: `${idx * 0.15}s` }}>
+                <div className="w-12 h-12 rounded-lg bg-white text-black flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 animate-float" style={{ animationDelay: `${idx * 0.2}s` }}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-black mb-4 uppercase tracking-tight">{feature.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed font-medium">{feature.description}</p>
+                <h3 className="text-xl font-black mb-4 uppercase tracking-tight group-hover:scale-105 transition-transform">{feature.title}</h3>
+                <p className="text-zinc-500 text-sm leading-relaxed font-medium group-hover:text-zinc-300 transition-colors">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -130,7 +132,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Starter Plan */}
-            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all hover-lift hover-glow animate-scaleIn">
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
                   STARTER
@@ -204,9 +206,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Growth Plan - Most Popular */}
-            <div className="bg-zinc-950 border-2 border-white/20 rounded-2xl p-8 relative hover:scale-105 transition-transform">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 bg-white text-black rounded-full text-[9px] font-black uppercase tracking-widest border-2 border-black">
+            <div className="bg-zinc-950 border-2 border-white/20 rounded-2xl p-8 relative hover:scale-105 transition-all hover-lift hover-glow animate-scaleIn" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 animate-bounce-slow">
+                <span className="px-4 py-1 bg-white text-black rounded-full text-[9px] font-black uppercase tracking-widest border-2 border-black animate-glow">
                   ⭐ MOST POPULAR
                 </span>
               </div>
@@ -278,7 +280,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all hover-lift hover-glow animate-scaleIn" style={{ animationDelay: '0.4s' }}>
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
                   PRO
@@ -357,17 +359,20 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 px-6">
-        <div className="max-w-5xl mx-auto border border-white/10 rounded-[40px] p-20 text-center relative overflow-hidden bg-zinc-950">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px]"></div>
+      <section className="py-40 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 shimmer-effect opacity-10"></div>
+        <div className="max-w-5xl mx-auto border border-white/10 rounded-[40px] p-20 text-center relative overflow-hidden bg-zinc-950 hover-glow animate-scaleIn">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] animate-float"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] animate-float" style={{ animationDelay: '1s' }}></div>
           
-          <h2 className="text-5xl font-black mb-8 uppercase tracking-tighter leading-tight">Capture every lead.</h2>
-          <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-medium">
+          <h2 className="text-5xl font-black mb-8 uppercase tracking-tighter leading-tight animate-slideUp gradient-animated">Capture every lead.</h2>
+          <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-medium animate-slideUp" style={{ animationDelay: '0.2s' }}>
             Stop losing business to voicemail. Deploy your FrontDesk in minutes.
           </p>
           <button 
              onClick={() => setCurrentPage(Page.DASHBOARD)}
-             className="px-12 py-5 bg-white text-black rounded font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-white/10"
+             className="px-12 py-5 bg-white text-black rounded font-black text-sm uppercase tracking-widest hover:scale-110 transition-all shadow-xl shadow-white/10 animate-bounce-slow hover-glow"
+             style={{ animationDelay: '0.4s' }}
           >
             Start Your Implementation
           </button>
