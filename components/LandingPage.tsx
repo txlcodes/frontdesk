@@ -130,10 +130,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Starter Plan */}
-            <div className="bg-zinc-950 border-2 border-blue-500/30 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
+            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[9px] font-black uppercase tracking-widest text-blue-400 mb-4">
-                  🟦 STARTER
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+                  STARTER
                 </div>
                 <h3 className="text-sm font-black uppercase mb-3">After-Hours Call Coverage</h3>
                 <p className="text-xs text-zinc-400 mb-4">Best for small clinics / testing AI</p>
@@ -156,37 +156,37 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                 <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3">Includes</p>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>AI answers calls after hours only</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Missed-call SMS auto text-back</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Lead capture (name, phone, reason)</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>CRM access (view leads & calls)</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Basic monthly reporting</span>
                   </li>
                 </ul>
                 <ul className="space-y-2 border-t border-white/5 pt-4">
                   <li className="flex items-start gap-2 text-xs text-zinc-600">
-                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span className="text-zinc-600 mt-0.5">✗</span>
                     <span>No appointment booking</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-600">
-                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span className="text-zinc-600 mt-0.5">✗</span>
                     <span>No calendar integration</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-600">
-                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span className="text-zinc-600 mt-0.5">✗</span>
                     <span>No overflow or daytime backup</span>
                   </li>
                 </ul>
@@ -204,73 +204,73 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Growth Plan - Most Popular */}
-            <div className="bg-white text-black border-2 border-green-500 rounded-2xl p-8 relative hover:scale-105 transition-transform">
+            <div className="bg-zinc-950 border-2 border-white/20 rounded-2xl p-8 relative hover:scale-105 transition-transform">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 bg-green-500 text-white rounded-full text-[9px] font-black uppercase tracking-widest">
+                <span className="px-4 py-1 bg-white text-black rounded-full text-[9px] font-black uppercase tracking-widest border-2 border-black">
                   ⭐ MOST POPULAR
                 </span>
               </div>
               
               <div className="mb-6 mt-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-[9px] font-black uppercase tracking-widest mb-4 text-green-600">
-                  🟩 GROWTH
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest mb-4 text-zinc-400">
+                  GROWTH
                 </div>
-                <h3 className="text-sm font-black uppercase mb-3">Core Offer</h3>
-                <p className="text-xs text-zinc-600 mb-4">For clinics that want more booked appointments</p>
+                <h3 className="text-sm font-black uppercase mb-3 text-white">Core Offer</h3>
+                <p className="text-xs text-zinc-400 mb-4">For clinics that want more booked appointments</p>
                 <div className="space-y-2 mb-4">
                   <div>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest">One-Time Setup</span>
-                    <div className="text-2xl font-black">$1,750</div>
+                    <div className="text-2xl font-black text-white">$1,750</div>
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Monthly</span>
-                    <div className="text-3xl font-black">$1,350</div>
+                    <div className="text-3xl font-black text-white">$1,350</div>
                   </div>
                 </div>
-                <p className="text-xs text-zinc-700 font-medium mb-4">
+                <p className="text-xs text-zinc-300 font-medium mb-4">
                   Turns missed and overflow calls into booked appointments automatically.
                 </p>
               </div>
               
               <div className="mb-6">
-                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Includes</p>
+                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3">Includes</p>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>AI answers after-hours + overflow calls</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Appointment booking</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Live calendar integration</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>CRM pipeline (lead → booked → showed)</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Missed-call → automated follow-ups</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>SMS reminders & confirmations</span>
                   </li>
-                  <li className="flex items-start gap-2 text-xs text-zinc-800">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Performance reporting dashboard</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="pt-6 border-t border-black/10">
-                <p className="text-[9px] text-zinc-600 mb-4 font-bold">🔥 Most clinics choose this plan.</p>
+              <div className="pt-6 border-t border-white/5">
+                <p className="text-[9px] text-zinc-500 mb-4 font-bold">Most clinics choose this plan.</p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
-                  className="w-full px-6 py-4 bg-black text-white hover:bg-zinc-900 rounded font-black text-xs uppercase tracking-widest transition-all"
+                  className="w-full px-6 py-4 bg-white text-black hover:bg-zinc-200 rounded font-black text-xs uppercase tracking-widest transition-all"
                 >
                   Get Started
                 </button>
@@ -278,10 +278,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-zinc-950 border-2 border-red-500/30 rounded-2xl p-8 hover:border-red-500/50 transition-all">
+            <div className="bg-zinc-950 border-2 border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-[9px] font-black uppercase tracking-widest text-red-400 mb-4">
-                  🟥 PRO
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+                  PRO
                 </div>
                 <h3 className="text-sm font-black uppercase mb-3">Full Front-Desk Support</h3>
                 <p className="text-xs text-zinc-400 mb-4">For busy, high-volume or multi-location clinics</p>
@@ -304,31 +304,31 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                 <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3">Includes</p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>AI answers calls 24/7</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>After-hours + overflow + daytime backup</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Priority call routing (staff → AI → fallback)</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>No-show reduction system</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Recall & reactivation campaigns</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Advanced reporting & insights</span>
                   </li>
                   <li className="flex items-start gap-2 text-xs text-zinc-300">
-                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span className="text-white mt-0.5">✓</span>
                     <span>Multi-location support (1 extra location)</span>
                   </li>
                 </ul>
