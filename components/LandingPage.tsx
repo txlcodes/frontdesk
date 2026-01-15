@@ -130,54 +130,70 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Starter Plan */}
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+            <div className="bg-zinc-950 border-2 border-blue-500/30 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
-                  Starter
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[9px] font-black uppercase tracking-widest text-blue-400 mb-4">
+                  🟦 STARTER
                 </div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-5xl font-black">$349</span>
-                  <span className="text-zinc-500 text-sm font-bold">/month</span>
+                <h3 className="text-sm font-black uppercase mb-3">After-Hours Call Coverage</h3>
+                <p className="text-xs text-zinc-400 mb-4">Best for small clinics / testing AI</p>
+                <div className="space-y-2 mb-4">
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">One-Time Setup</span>
+                    <div className="text-2xl font-black">$1,250</div>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Monthly</span>
+                    <div className="text-3xl font-black">$900</div>
+                  </div>
                 </div>
-                <p className="text-zinc-500 text-sm font-medium mt-4 leading-relaxed">
-                  Perfect for small practices getting started
+                <p className="text-xs text-zinc-300 font-medium mb-4">
+                  Stops losing patients after clinic hours and captures missed opportunities automatically.
                 </p>
               </div>
               
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>24/7 AI voice receptionist</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Unlimited calls & conversations</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Calendar integration</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Call transcripts & analytics</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Email support</span>
-                </li>
-              </ul>
+              <div className="mb-6">
+                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3">Includes</p>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span>AI answers calls after hours only</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span>Missed-call SMS auto text-back</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span>Lead capture (name, phone, reason)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span>CRM access (view leads & calls)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-blue-400 mt-0.5">✓</span>
+                    <span>Basic monthly reporting</span>
+                  </li>
+                </ul>
+                <ul className="space-y-2 border-t border-white/5 pt-4">
+                  <li className="flex items-start gap-2 text-xs text-zinc-600">
+                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span>No appointment booking</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-600">
+                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span>No calendar integration</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-600">
+                    <span className="text-red-400 mt-0.5">✗</span>
+                    <span>No overflow or daytime backup</span>
+                  </li>
+                </ul>
+              </div>
               
               <div className="pt-6 border-t border-white/5">
+                <p className="text-[9px] text-zinc-500 mb-4 italic">Low-risk entry plan. Easy upsell to Growth.</p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
                   className="w-full px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded font-black text-xs uppercase tracking-widest transition-all"
@@ -188,60 +204,70 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Growth Plan - Most Popular */}
-            <div className="bg-white text-black border-2 border-white rounded-2xl p-8 relative hover:scale-105 transition-transform">
+            <div className="bg-white text-black border-2 border-green-500 rounded-2xl p-8 relative hover:scale-105 transition-transform">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 bg-white text-black rounded-full text-[9px] font-black uppercase tracking-widest border-2 border-black">
-                  ⭐ Most Popular
+                <span className="px-4 py-1 bg-green-500 text-white rounded-full text-[9px] font-black uppercase tracking-widest">
+                  ⭐ MOST POPULAR
                 </span>
               </div>
               
               <div className="mb-6 mt-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 text-[9px] font-black uppercase tracking-widest mb-4">
-                  Growth
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-[9px] font-black uppercase tracking-widest mb-4 text-green-600">
+                  🟩 GROWTH
                 </div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-5xl font-black">$449</span>
-                  <span className="text-zinc-600 text-sm font-bold">/month</span>
+                <h3 className="text-sm font-black uppercase mb-3">Core Offer</h3>
+                <p className="text-xs text-zinc-600 mb-4">For clinics that want more booked appointments</p>
+                <div className="space-y-2 mb-4">
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">One-Time Setup</span>
+                    <div className="text-2xl font-black">$1,750</div>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Monthly</span>
+                    <div className="text-3xl font-black">$1,350</div>
+                  </div>
                 </div>
-                <p className="text-zinc-600 text-sm font-medium mt-4 leading-relaxed">
-                  Ideal for growing practices with higher call volume
+                <p className="text-xs text-zinc-700 font-medium mb-4">
+                  Turns missed and overflow calls into booked appointments automatically.
                 </p>
               </div>
               
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-sm text-zinc-800">
-                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Everything in Starter</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-800">
-                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Advanced call routing & queuing</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-800">
-                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>CRM integrations</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-800">
-                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Custom voice & personality</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-800">
-                  <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Priority support</span>
-                </li>
-              </ul>
+              <div className="mb-6">
+                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-3">Includes</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>AI answers after-hours + overflow calls</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Appointment booking</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Live calendar integration</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>CRM pipeline (lead → booked → showed)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Missed-call → automated follow-ups</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>SMS reminders & confirmations</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-800">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Performance reporting dashboard</span>
+                  </li>
+                </ul>
+              </div>
               
               <div className="pt-6 border-t border-black/10">
+                <p className="text-[9px] text-zinc-600 mb-4 font-bold">🔥 Most clinics choose this plan.</p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
                   className="w-full px-6 py-4 bg-black text-white hover:bg-zinc-900 rounded font-black text-xs uppercase tracking-widest transition-all"
@@ -251,67 +277,65 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
               </div>
             </div>
 
-            {/* Pro / HIPAA Plan */}
-            <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all">
+            {/* Pro Plan */}
+            <div className="bg-zinc-950 border-2 border-red-500/30 rounded-2xl p-8 hover:border-red-500/50 transition-all">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-4">
-                  Pro / HIPAA
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-[9px] font-black uppercase tracking-widest text-red-400 mb-4">
+                  🟥 PRO
                 </div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-4xl font-black">Starting at</span>
+                <h3 className="text-sm font-black uppercase mb-3">Full Front-Desk Support</h3>
+                <p className="text-xs text-zinc-400 mb-4">For busy, high-volume or multi-location clinics</p>
+                <div className="space-y-2 mb-4">
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">One-Time Setup</span>
+                    <div className="text-2xl font-black">$2,750</div>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Monthly</span>
+                    <div className="text-3xl font-black">$2,750</div>
+                  </div>
                 </div>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-5xl font-black">$749</span>
-                  <span className="text-zinc-500 text-sm font-bold">/month</span>
-                </div>
-                <p className="text-zinc-500 text-sm font-medium mt-4 leading-relaxed">
-                  Enterprise solution for multi-location practices
+                <p className="text-xs text-zinc-300 font-medium mb-4">
+                  Replaces a large part of front-desk workload and ensures no patient opportunity is missed — 24/7.
                 </p>
               </div>
               
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Everything in Growth</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Full HIPAA compliance & BAA</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Multi-location management</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Dedicated account manager</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Custom integrations & workflows</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>24/7 phone & email support</span>
-                </li>
-              </ul>
+              <div className="mb-6">
+                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-3">Includes</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>AI answers calls 24/7</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>After-hours + overflow + daytime backup</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>Priority call routing (staff → AI → fallback)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>No-show reduction system</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>Recall & reactivation campaigns</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>Advanced reporting & insights</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-zinc-300">
+                    <span className="text-red-400 mt-0.5">✓</span>
+                    <span>Multi-location support (1 extra location)</span>
+                  </li>
+                </ul>
+              </div>
               
               <div className="pt-6 border-t border-white/5">
-                <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest mb-4">
-                  Custom pricing based on practice size
-                </p>
+                <p className="text-[9px] text-zinc-500 mb-4 italic">Acts like a 24/7 front desk without hiring more staff.</p>
                 <button 
                   onClick={() => setCurrentPage(Page.DASHBOARD)}
                   className="w-full px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded font-black text-xs uppercase tracking-widest transition-all"
@@ -320,6 +344,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ setCurrentPage }) => {
                 </button>
               </div>
             </div>
+          </div>
+
+          {/* Call Usage Note */}
+          <div className="max-w-4xl mx-auto mt-12 p-6 bg-zinc-950 border border-white/10 rounded-xl">
+            <p className="text-xs text-zinc-400 text-center">
+              <span className="font-bold">Call Usage:</span> Each plan is designed around real dental clinic call volumes. 
+              Most clinics never hit their limit. If usage increases, calls never stop — a small per-minute top-up applies ($0.25/minute).
+            </p>
           </div>
         </div>
       </section>
